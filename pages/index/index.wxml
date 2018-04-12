@@ -1,0 +1,26 @@
+<!--index.wxml-->   
+<view class="container">
+  <input placeholder='请输入菜名' bindinput='input'></input>
+  <button bindtap='btnClick'>查询</button>
+</view>
+
+<view class='message' wx:if="{{message}}">{{message}}</view>
+
+<scroll-view scroll-y="true" style="height: 1100rpx;" bindscrolltolower="searchScrollLower">
+   <image class='bg' src='/images/caipu.jpg'></image> 
+  <view wx:for="{{foodInfo}}" class='boxs'>
+    <view class='box'>
+      <view>{{item.title}}</view>
+      <image wx:for="{{item.albums}}" src='{{item}}'></image>
+      <view class='imtro'><text class='jj'>简介：</text>{{item.imtro}}</view>
+      <view class='imtro'><text class='jj'>用料：</text>{{item.burden}}</view>
+      <view class='imtro'><text class='jj'>制作过程：</text></view>
+      <view wx:for="{{item.steps}}">
+        <view class='imtro'><text class='jj'>{{item.step}}</text></view>
+        <image src='{{item.img}}'></image>
+      </view>  
+    </view>
+  </view>
+</scroll-view>  
+
+<view class='searchLoadingComplete' wx:if="{{searchLoadingComplete}}">已经没有数据了</view>

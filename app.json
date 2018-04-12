@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ddd",
+    "navigationBarTitleText": "菜谱查询",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  }
+}
